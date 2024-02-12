@@ -94,12 +94,12 @@ version: '3.8'
 
 services:
   mysql:
-    image: mysql:8.3.0
-      environment:
-        MYSQL_ROOT_PASSWORD: root
-        MYSQL_DATABASE: todo
-      ports:
-        - 3306:3306 # <LOCAL_PORT>:<CONTAINER_PORT>
+    image: mysql:8.1.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: todo
+    ports:
+      - 3306:3306
 
   phpmyadmin:
     image: phpmyadmin:5.2.1
@@ -107,9 +107,9 @@ services:
       - 8080:80
     environment:
       PMA_HOST: mysql
-      PMA_USER:
-       root
+      PMA_USER: root
       PMA_PASSWORD: root
+
 ```
 
 In the code above I added `phpmyadmin` service that uses the image `phpmyadmin:5.2.1` and binds port the host from `8080` to the container port `80` This means we go to <http://localhost:8080> it can connect to the PHPMyAdmin web page. (currently not, because we are not running the container)
