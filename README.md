@@ -66,11 +66,11 @@ version: '3.8'
 services:
   mysql:
     image: mysql:8.3.0
-      environment:
-        MYSQL_ROOT_PASSWORD: root
-        MYSQL_DATABASE: todo
-      ports:
-        - 3306:3306 # <LOCAL_PORT>:<CONTAINER_PORT>
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: todo
+    ports:
+      - 3306:3306 # <LOCAL_PORT>:<CONTAINER_PORT>
 ```
 
 Let's break down what the file says.
@@ -99,7 +99,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: todo
     ports:
-      - 3306:3306
+      - 3306:3306 # <LOCAL_PORT>:<CONTAINER_PORT>
 
   phpmyadmin:
     image: phpmyadmin:5.2.1
